@@ -14,13 +14,18 @@ class Game {
         this.config = new Config({ sizeBerry: 4, sizeCell: 16 });
         this.snake = new Snake(this.config);
         this.canvas = new Canvas(this.container);
-        new GameLoop( this.update.bind(this), this.draw.bind(this) );
+        new GameLoop(this.config, this.update.bind(this), this.draw.bind(this) );
     }
 
     update() {
         this.snake.update();
     }
     draw() {
+        console.log('54645');
+        this.canvas.context.clearRect( 0, 0, this.canvas.element.width, this.canvas.element.height );
+
+        // this.snake.draw( this.canvas.context );
+        // this.berry.draw( this.canvas.context );
 
     }
 }
