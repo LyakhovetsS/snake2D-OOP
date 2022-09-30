@@ -9,9 +9,7 @@ export default class GameLoop {
     animate() {
 
         requestAnimationFrame(this.animate);
-        if (++this.config.step < this.config.maxStep) {
-            return;
-        }
+        if (++this.config.step < this.config.maxStep) return;
         this.config.step = 0;
 
         this.update();
